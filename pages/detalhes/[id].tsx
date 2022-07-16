@@ -29,6 +29,7 @@ import Header from '../../components/Header/Header';
 
 import styled from 'styled-components';
 import Head from 'next/head';
+import Link from 'next/link';
 
 interface Props {
   item: Stripe.Price;
@@ -62,9 +63,12 @@ const Detail = ({ item }: Props) => {
       <Header index={2} />
 
       <div style={{ position: 'relative', margin: '5rem 0' }}>
-        <GoBackButton onClick={() => router.back()} aria-label="voltar">
-          <FaAngleLeft size={32} />
-        </GoBackButton>
+        <Link href={'/produtos'}>
+          <GoBackButton>
+            <FaAngleLeft />
+            Voltar
+          </GoBackButton>
+        </Link>
         <Container>
           <ProductContainer>
             <LocationSubtitle>
@@ -84,7 +88,7 @@ const Detail = ({ item }: Props) => {
                 isPlaying={true}
                 dragEnabled={images.length > 1}
               >
-                <Slider>
+                <Slider style={{ cursor: 'grab' }}>
                   {images.map((url: string, idx: number) => {
                     return (
                       <Slide index={idx} key={idx}>
@@ -212,6 +216,11 @@ const GoBackButton = styled.button`
 
   background: none;
   border: none;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 3.6rem;
 
   color: #534fc8;
 
