@@ -35,7 +35,7 @@ class MyDocument extends Document {
           <meta name="title" content="Palivendas" />
           <meta
             name="keywords"
-            content="compra, melhor, venda, barato, eletrodomésticos, Palivendas vendas, palivendas, usado, semi novo, frete"
+            content="compra, melhor, venda, barato, eletrodomésticos, Palivendas, palivendas, usado, semi novo, frete"
           />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="author" content="Marcelo Schreiber" />
@@ -46,7 +46,7 @@ class MyDocument extends Document {
           <link rel="mask-icon" href="/maskable_icon_x1" color="#534FC8" />
           <meta
             name="description"
-            content="Negocie, compre e venda os melhores e mais Baratos produtos exclusivos da Palivendas Vendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
+            content="Negocie, compre e venda os melhores e mais Baratos produtos exclusivos da Palivendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
           />
 
           <meta property="og:site_name" content="PALIVENDAS" />
