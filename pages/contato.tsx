@@ -81,7 +81,7 @@ const Contact: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Palishop Vendas | Contato</title>
+        <title>Palivendas | Contato</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Header index={3} />

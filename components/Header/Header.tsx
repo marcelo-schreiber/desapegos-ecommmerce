@@ -13,7 +13,7 @@ function Header({ index }: currPage) {
           src={'/logo153.png'}
           width={153}
           height={153}
-          alt="palishop vendas logo"
+          alt="palivendas logo"
         />
       </Link>
       <nav>

@@ -32,10 +32,10 @@ class MyDocument extends Document {
     return (
       <Html lang="pt_BR">
         <Head>
-          <meta name="title" content="Palishop Vendas" />
+          <meta name="title" content="Palivendas" />
           <meta
             name="keywords"
-            content="compra, melhor, venda, barato, eletrodomésticos, palishop vendas, palishop, usado, semi novo, frete"
+            content="compra, melhor, venda, barato, eletrodomésticos, Palivendas vendas, palivendas, usado, semi novo, frete"
           />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="author" content="Marcelo Schreiber" />
@@ -46,10 +46,10 @@ class MyDocument extends Document {
           <link rel="mask-icon" href="/maskable_icon_x1" color="#534FC8" />
           <meta
             name="description"
-            content="Negocie, compre e venda os melhores e mais Baratos produtos exclusivos da Palishop Vendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
+            content="Negocie, compre e venda os melhores e mais Baratos produtos exclusivos da Palivendas Vendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
           />
 
-          <meta property="og:site_name" content="PALISHOP VENDAS" />
+          <meta property="og:site_name" content="PALIVENDAS" />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:type" content="website" />
           <meta name="robots" content="index, follow" />

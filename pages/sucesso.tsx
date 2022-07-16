@@ -12,7 +12,7 @@ const Success: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Palishop Vendas | Compra realizada</title>
+        <title>Palivendas | Compra realizada</title>
       </Head>
       <Wrapper>
         <Div>

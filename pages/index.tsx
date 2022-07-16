@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Palishop Vendas | Home</title>
+        <title>Palivendas | Home</title>
       </Head>
       <Header index={1} />
       <ContentWrapper>
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           <ImageWrapper>
             <Image
               src="/shopping.png"
-              alt="mulher comprando no palishop vendas"
+              alt="mulher comprando no palivendas"
               width={633}
               height={478}
             />
@@ -51,9 +51,9 @@ const Home: NextPage = () => {
           para ficar anunciando ou negociando os desapegos;
         </AboutSection>
         <AboutSection>
-          A <h1>Palishop Vendas</h1> é um site de tecnologia que oferece
-          soluções de desapegos para que pessoas e empresas possam comprar,
-          vender ou oferecer seus serviços;
+          A <h1>Palivendas</h1> é um site de tecnologia que oferece soluções de
+          desapegos para que pessoas e empresas possam comprar, vender ou
+          oferecer seus serviços;
         </AboutSection>
         <AboutSection>
           Cada pessoa física ou jurídica ficará responsável em fornecer as

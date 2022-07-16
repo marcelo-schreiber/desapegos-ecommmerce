@@ -41,7 +41,7 @@ const Detail = ({ item }: Props) => {
   const images =
     [...getProductImageArray(item.product), getProductImage(item.product)] ||
     [];
-  const title = `Palishop Vendas | ${name}`;
+  const title = `Palivendas | ${name}`;
 
   return (
     <>

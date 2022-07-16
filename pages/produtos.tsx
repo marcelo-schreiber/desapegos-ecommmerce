@@ -29,7 +29,7 @@ const Products: NextPage<Props> = ({ prices }) => {
   return (
     <>
       <Head>
-        <title>Palishop Vendas | Produtos</title>
+        <title>Palivendas | Produtos</title>
       </Head>
       <Header index={2} />
       <ProductsContainer>
