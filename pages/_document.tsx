@@ -40,24 +40,27 @@ class MyDocument extends Document {
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="author" content="Marcelo Schreiber" />
           <meta name="language" content="Portuguese" />
-          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="theme-color" content="#534FC8" />
+          <link rel="mask-icon" href="/maskable_icon_x1" color="#534FC8" />
           <meta
             name="description"
             content="Negocie, compre e venda os melhores e mais Baratos produtos exclusivos da Palishop Vendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
           />
+
           <meta property="og:site_name" content="PALISHOP VENDAS" />
           <meta property="og:locale" content="pt-br" />
           <meta property="og:type" content="website" />
           <meta name="robots" content="index, follow" />
-          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+          <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
             rel="stylesheet"
             as="style"
           />
-          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />
