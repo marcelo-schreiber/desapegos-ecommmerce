@@ -120,7 +120,6 @@ const Detail = ({ item }: Props) => {
                         style={{
                           position: 'absolute',
                           right: 0,
-                          margin: '.5rem 0',
                           backgroundColor: 'transparent',
                           border: 'none',
                           cursor: 'pointer',
