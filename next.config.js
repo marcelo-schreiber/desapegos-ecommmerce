@@ -5,7 +5,12 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['files.stripe.com', 'img.olx.com.br'],
+    domains: [
+      'files.stripe.com',
+      'img.olx.com.br',
+      'olx.com.br',
+      'www2.olx.com.br',
+    ],
   },
 };
 
