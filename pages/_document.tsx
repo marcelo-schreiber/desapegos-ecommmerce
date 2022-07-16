@@ -30,7 +30,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="pt-br">
+      <Html lang="pt_BR">
         <Head>
           <meta name="title" content="Palishop Vendas" />
           <meta
@@ -50,7 +50,7 @@ class MyDocument extends Document {
           />
 
           <meta property="og:site_name" content="PALISHOP VENDAS" />
-          <meta property="og:locale" content="pt-br" />
+          <meta property="og:locale" content="pt_BR" />
           <meta property="og:type" content="website" />
           <meta name="robots" content="index, follow" />
           <link rel="apple-touch-icon" href="/logo192.png" />
