@@ -37,6 +37,10 @@ class MyDocument extends Document {
             name="keywords"
             content="compra, melhor, venda, barato, eletrodomésticos, Palivendas, palivendas, usado, semi novo, frete"
           />
+          <meta
+            name="google-site-verification"
+            content="-6-HBjMJtkvjeNGG-ZD6Hfh9TEdK2L1gZlTHMnB3xfk"
+          />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="author" content="Marcelo Schreiber" />
           <meta name="language" content="Portuguese" />
