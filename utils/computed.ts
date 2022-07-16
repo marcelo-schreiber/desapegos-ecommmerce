@@ -11,7 +11,7 @@ export function getProductDescription(product: any) {
 }
 
 export function getProductImageArray(product: any) {
-  return product.images;
+  return Object.values(product?.metadata);
 }
 
 export function getPriceTotal(price: any) {

@@ -38,7 +38,9 @@ const Detail = ({ item }: Props) => {
   const router = useRouter();
 
   const name = getProductName(item.product);
-  const images = getProductImageArray(item.product) || ['/Logo192.png'];
+  const images =
+    [...getProductImageArray(item.product), getProductImage(item.product)] ||
+    [];
   const title = `Palishop Vendas | ${name}`;
 
   return (
@@ -87,7 +89,7 @@ const Detail = ({ item }: Props) => {
                     return (
                       <Slide index={idx} key={idx}>
                         <Image
-                          src={url}
+                          src={`${url}`}
                           alt={`${name} ${idx}`}
                           width={1244}
                           height={700}
