@@ -4,13 +4,23 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://palivendas.cf/</loc>
   <lastmod>2022-07-16T22:10:19+00:00</lastmod>
+  <priority>0.8</priority>
 </url>
 
+<url>
+  <loc>https://palivendas.cf/produtos</loc>
+  <lastmod>2022-07-16T22:10:19+00:00</lastmod>
+    <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://palivendas.cf/contato</loc>
+  <lastmod>2022-07-16T22:10:19+00:00</lastmod>
+  <priority>0.2</priority>
+</url>
 
 </urlset>
