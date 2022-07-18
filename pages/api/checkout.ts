@@ -23,7 +23,7 @@ export default async function handler(
   try {
     const baseUrl =
       process.env.NODE_ENV === 'production'
-        ? 'https://palishop-vendas.vercel.app'
+        ? 'https://palivendas.cf'
         : 'http://localhost:3000';
 
     const body: LineItem = JSON.parse(req.body);

@@ -171,7 +171,10 @@ export const getStaticPaths: GetStaticPaths = async (_) => {
     apiVersion: '2020-08-27',
   });
 
-  const res = await stripe.prices.list({ expand: ['data.product'] });
+  const res = await stripe.prices.list({
+    limit: 100,
+    expand: ['data.product'],
+  });
 
   const prices = res.data.filter((price) => price.active);
 
