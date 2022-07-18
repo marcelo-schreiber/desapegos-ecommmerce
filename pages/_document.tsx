@@ -35,7 +35,7 @@ class MyDocument extends Document {
           <meta name="title" content="Palivendas" />
           <meta
             name="keywords"
-            content="compra, melhor, venda, barato, eletrodomésticos, Palivendas, palivendas, usado, semi novo, frete"
+            content="compra, melhor, venda, barato, eletrodomésticos, palivendas, usado, semi novo, frete, jogos, ps4"
           />
           <meta
             name="google-site-verification"
