@@ -198,7 +198,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     expand: ['product'],
   });
 
-  return { props: { item: res }, revalidate: 120 };
+  return { props: { item: res }, revalidate: 60 };
 };
 
 export default Detail;
