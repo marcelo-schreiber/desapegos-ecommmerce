@@ -29,14 +29,12 @@ import Header from '../../components/Header/Header';
 import styled from 'styled-components';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 interface Props {
   item: Stripe.Price;
 }
 
 const Detail = ({ item }: Props) => {
-  const router = useRouter();
   const name = getProductName(item?.product);
   const images =
     [...getProductImageArray(item?.product), getProductImage(item?.product)] ||
