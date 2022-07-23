@@ -30,12 +30,13 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="pt_BR">
+      <Html lang="pt-br">
         <Head>
-          <meta name="title" content="Palivendas" />
+          <meta name="title" content="Palivendas: Home" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="keywords"
-            content="compra, melhor, venda, barato, eletrodomésticos, palivendas, usado, semi novo, frete, jogos, ps4"
+            content="palivendas,compra, melhor, venda, barato, eletrodomésticos, usado, semi novo, frete, jogos, ps4"
           />
           <meta
             name="google-site-verification"
