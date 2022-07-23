@@ -1,7 +1,6 @@
 import React from 'react';
 
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Stripe from 'stripe';
 
@@ -36,9 +35,9 @@ interface Props {
 }
 
 const Detail = ({ item }: Props) => {
-  const name = getProductName(item.product);
+  const name = getProductName(item?.product);
   const images =
-    [...getProductImageArray(item.product), getProductImage(item.product)] ||
+    [...getProductImageArray(item?.product), getProductImage(item?.product)] ||
     [];
   const title = `Palivendas | ${name}`;
 
@@ -48,15 +47,15 @@ const Detail = ({ item }: Props) => {
         <title>{title}</title>
         <meta
           name="description"
-          content={getProductDescription(item.product)}
+          content={getProductDescription(item?.product)}
         />
         <meta name="robots" content="index, nofollow" />
         <meta property="og:title" content={name} />
         <meta
           property="og:description"
-          content={getProductDescription(item.product)}
+          content={getProductDescription(item?.product)}
         />
-        <meta property="og:image" content={getProductImage(item.product)} />
+        <meta property="og:image" content={getProductImage(item?.product)} />
       </Head>
       <Header index={2} />
 
@@ -87,7 +86,7 @@ const Detail = ({ item }: Props) => {
                 dragEnabled={images.length > 1}
               >
                 <Slider style={{ cursor: 'grab' }}>
-                  {images.map((url: string, idx: number) => {
+                  {images?.map((url: string, idx: number) => {
                     return (
                       <Slide index={idx} key={idx}>
                         <Image
@@ -101,7 +100,7 @@ const Detail = ({ item }: Props) => {
                     );
                   })}
                 </Slider>
-                {images.length > 1 && (
+                {images?.length > 1 && (
                   <div>
                     <div style={{ position: 'relative' }}>
                       <ButtonBack
@@ -134,7 +133,9 @@ const Detail = ({ item }: Props) => {
             <ContentSection>
               <ContentText>
                 <ul>
-                  <DetailText>{getProductDescription(item.product)}</DetailText>
+                  <DetailText>
+                    {getProductDescription(item?.product)}
+                  </DetailText>
                 </ul>
                 <PriceText>
                   Valor: <meta itemProp="price" content={getPriceTotal(item)} />

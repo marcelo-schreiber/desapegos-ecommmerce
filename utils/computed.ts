@@ -11,11 +11,13 @@ export function getProductDescription(product: any) {
 }
 
 export function getProductImageArray(product: any) {
-  return Object.values(product?.metadata);
+  return product?.metadata ? Object.values(product?.metadata) : [];
 }
 
 export function getPriceTotal(price: any) {
-  return Number(price.unit_amount / 100)
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add commas
+  return price
+    ? Number(price.unit_amount / 100)
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    : 'A negociar'; // add commas
 }
