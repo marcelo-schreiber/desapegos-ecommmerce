@@ -32,6 +32,7 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
+          <meta charSet="UTF-8" />
           <meta name="title" content="Palivendas: Home" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
