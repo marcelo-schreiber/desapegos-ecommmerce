@@ -43,15 +43,6 @@ const Detail = ({ item }: Props) => {
     [];
   const title = `Palivendas | ${name}`;
 
-  if (router.isFallback) {
-    return (
-      <>
-        <Header index={2} />
-        <h1>Carregando...</h1>
-      </>
-    );
-  }
-
   return (
     <>
       <Head>
@@ -198,7 +189,7 @@ export const getStaticPaths: GetStaticPaths = async (_) => {
 
   return {
     paths,
-    fallback: true,
+    fallback: 'blocking',
   };
 };
 
