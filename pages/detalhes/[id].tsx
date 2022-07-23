@@ -29,7 +29,7 @@ import Header from '../../components/Header/Header';
 import styled from 'styled-components';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 interface Props {
   item: Stripe.Price;
@@ -44,7 +44,12 @@ const Detail = ({ item }: Props) => {
   const title = `Palivendas | ${name}`;
 
   if (router.isFallback) {
-    return <h1>404</h1>;
+    return (
+      <>
+        <Header index={2} />
+        <h1>Carregando...</h1>
+      </>
+    );
   }
 
   return (
@@ -198,15 +203,21 @@ export const getStaticPaths: GetStaticPaths = async (_) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
-    apiVersion: '2020-08-27',
-  });
+  try {
+    const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
+      apiVersion: '2020-08-27',
+    });
 
-  const res = await stripe.prices.retrieve(`${params?.id}`, {
-    expand: ['product'],
-  });
+    const res = await stripe.prices.retrieve(`${params?.id}`, {
+      expand: ['product'],
+    });
 
-  return { props: { item: res }, revalidate: 60 };
+    return { props: { item: res }, revalidate: 60 };
+  } catch (err) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default Detail;
