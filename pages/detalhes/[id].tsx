@@ -36,8 +36,6 @@ interface Props {
 }
 
 const Detail = ({ item }: Props) => {
-  const router = useRouter();
-
   const name = getProductName(item.product);
   const images =
     [...getProductImageArray(item.product), getProductImage(item.product)] ||
