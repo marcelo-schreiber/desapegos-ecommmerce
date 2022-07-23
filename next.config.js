@@ -10,6 +10,7 @@ const nextConfig = {
       'img.olx.com.br',
       'olx.com.br',
       'www2.olx.com.br',
+      'http2.mlstatic.com',
     ],
   },
 };
