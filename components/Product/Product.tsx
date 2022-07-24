@@ -42,12 +42,7 @@ function Product({ price }: Props) {
       </Link>
       <CardPrice>
         Valor: <meta itemProp="price" content={getPriceTotal(price)} />
-        {getPriceTotal(price) && (
-          <Price>
-            <span itemProp="priceCurrency">R$</span>
-            {getPriceTotal(price)},00
-          </Price>
-        )}
+        {getPriceTotal(price) && <Price>{getPriceTotal(price)}</Price>}
       </CardPrice>
 
       <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>

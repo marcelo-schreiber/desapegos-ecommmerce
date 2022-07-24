@@ -139,14 +139,7 @@ const Detail = ({ item }: Props) => {
                 </ul>
                 <PriceText>
                   Valor: <meta itemProp="price" content={getPriceTotal(item)} />
-                  {item ? (
-                    <b>
-                      <span itemProp="priceCurrency">R$</span>
-                      {getPriceTotal(item)},00
-                    </b>
-                  ) : (
-                    <b>A negociar</b>
-                  )}
+                  {item ? <b>{getPriceTotal(item)}</b> : <b>A negociar</b>}
                 </PriceText>
                 <Ripples>
                   <NegociateButton

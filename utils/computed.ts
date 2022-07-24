@@ -16,8 +16,9 @@ export function getProductImageArray(product: any) {
 
 export function getPriceTotal(price: any) {
   return price
-    ? Number(price.unit_amount / 100)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    ? Number(price.unit_amount / 100).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      })
     : 'A negociar'; // add commas
 }
