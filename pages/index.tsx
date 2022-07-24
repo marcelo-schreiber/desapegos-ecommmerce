@@ -132,7 +132,7 @@ const SubTitle = styled.h3`
   text-align: center;
 `;
 
-const AboutSection = styled.p`
+const AboutSection = styled.div`
   display: block;
   margin: 0 auto;
 

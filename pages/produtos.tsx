@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { GetServerSideProps, NextPage } from 'next';
 
 import Stripe from 'stripe';
@@ -8,6 +7,7 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import { getProductType } from '../utils/computed';
 import { useState } from 'react';
+import { VolksCar, nissanCar } from '../data/cars';
 
 export const getServerSideProps: GetServerSideProps = async (_) => {
   const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
@@ -30,11 +30,13 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   const pricesJogos = prices.filter(
     (price) => getProductType(price.product) === 'eletronico'
   );
+  const pricesAnuncio = [
+    ...prices.filter((price) => getProductType(price.product) === 'anuncio'),
+    VolksCar,
+    nissanCar,
+  ];
   const pricesUtilidade = prices.filter(
-    (price) => getProductType(price.product) === 'utilidade'
-  );
-  const pricesAnuncio = prices.filter(
-    (price) => getProductType(price.product) === 'anuncio'
+    (price) => getProductType(price.product) === 'utlidade'
   );
 
   return {
@@ -75,29 +77,13 @@ const Products: NextPage<Props> = ({
       </Head>
       <Header index={2} />
       <FilterContainer>
-        <a href="javascript: void(0)" onClick={() => setProducts(prices)}>
-          Todos
-        </a>
-        <a href="javascript: void(0)" onClick={() => setProducts(pricesSom)}>
-          Som e áudio
-        </a>
-        <a href="javascript: void(0)" onClick={() => setProducts(pricesModa)}>
-          Moda e Beleza
-        </a>
-        <a href="javascript: void(0)" onClick={() => setProducts(pricesJogos)}>
-          Eletrônicos e Jogos
-        </a>
-        <a
-          href="javascript: void(0)"
-          onClick={() => setProducts(pricesUtilidade)}
-        >
+        <a onClick={() => setProducts(prices)}>Todos</a>
+        <a onClick={() => setProducts(pricesSom)}>Som e áudio</a>
+        <a onClick={() => setProducts(pricesModa)}>Moda e Beleza</a>
+        <a onClick={() => setProducts(pricesJogos)}>Eletrônicos e Jogos</a>
+        <a onClick={() => setProducts(pricesAnuncio)}>Anúncios e Serviços</a>
+        <a onClick={() => setProducts(pricesUtilidade)}>
           Utilidades domésticas
-        </a>
-        <a
-          href="javascript: void(0)"
-          onClick={() => setProducts(pricesAnuncio)}
-        >
-          Anúncios e Serviços
         </a>
       </FilterContainer>
       <ProductsContainer>

@@ -30,7 +30,7 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const CardPrice = styled.p`
+export const CardPrice = styled.div`
   font-weight: normal;
   font-size: 2.65rem;
 

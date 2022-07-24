@@ -69,7 +69,7 @@ const Div = styled.div`
   justify-content: center;
 `;
 
-const SideParagraph = styled.p`
+const SideParagraph = styled.div`
   font-size: 4rem;
   line-height: 133.5%;
 
@@ -82,7 +82,7 @@ const SideParagraph = styled.p`
   margin-bottom: 6.5rem;
 `;
 
-const SideText = styled.p`
+const SideText = styled.div`
   font-size: 2rem;
 
   font-weight: lighter;

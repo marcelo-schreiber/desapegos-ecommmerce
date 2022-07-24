@@ -1,8 +1,6 @@
 import React from 'react';
 
-import type { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
-import Stripe from 'stripe';
 
 import {
   CarouselProvider,
@@ -13,7 +11,7 @@ import {
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
-import { FaAngleLeft, FaAngleRight, FaShoppingCart } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight, FaWhatsapp } from 'react-icons/fa';
 import {
   getProductName,
   getPriceTotal,
@@ -29,12 +27,11 @@ import Header from '../../components/Header/Header';
 import styled from 'styled-components';
 import Head from 'next/head';
 import Link from 'next/link';
+import { VolksCar } from '../../data/cars';
 
-interface Props {
-  item: Stripe.Price;
-}
+const Detail = () => {
+  const item = VolksCar;
 
-const Detail = ({ item }: Props) => {
   const name = getProductName(item?.product);
   const images =
     [...getProductImageArray(item?.product), getProductImage(item?.product)] ||
@@ -78,7 +75,7 @@ const Detail = ({ item }: Props) => {
             <div style={{ margin: '2rem 0' }}>
               <CarouselProvider
                 naturalSlideWidth={1244}
-                naturalSlideHeight={700}
+                naturalSlideHeight={800}
                 totalSlides={images.length}
                 playDirection={'forward'}
                 interval={3000}
@@ -93,7 +90,7 @@ const Detail = ({ item }: Props) => {
                           src={`${url}`}
                           alt={`${name} ${idx}`}
                           width={1244}
-                          height={700}
+                          height={1000}
                           objectFit="cover"
                         />
                       </Slide>
@@ -134,6 +131,21 @@ const Detail = ({ item }: Props) => {
               <ContentText>
                 <ul>
                   <DetailText>
+                    <b>Direção: </b>
+                    {item?.product.Direção}
+                  </DetailText>
+                  <DetailText>
+                    {' '}
+                    <b>Potência: </b>
+                    {item?.product.Potência}
+                  </DetailText>
+                  <DetailText>
+                    {' '}
+                    <b>Quilometragem: </b>
+                    {item?.product.Quilometragem}
+                  </DetailText>
+                  <br />
+                  <DetailText>
                     {getProductDescription(item?.product)}
                   </DetailText>
                 </ul>
@@ -142,12 +154,16 @@ const Detail = ({ item }: Props) => {
                   {item ? <b>{getPriceTotal(item)}</b> : <b>A negociar</b>}
                 </PriceText>
                 <Ripples>
-                  <NegociateButton
-                    onClick={() => checkout(item.id)}
-                    aria-label="negociar"
+                  <Link
+                    href={`https://wa.me/5541998331224?text=Gostaria de conversar sobre o ${name}`}
                   >
-                    Comprar <FaShoppingCart color="#fff" size={36} />
-                  </NegociateButton>
+                    <NegociateButton
+                      onClick={() => checkout(item.id)}
+                      aria-label="negociar"
+                    >
+                      Negociar <FaWhatsapp color="#fff" size={36} />
+                    </NegociateButton>
+                  </Link>
                 </Ripples>
               </ContentText>
             </ContentSection>
@@ -156,50 +172,6 @@ const Detail = ({ item }: Props) => {
       </div>
     </>
   );
-};
-
-export const getStaticPaths: GetStaticPaths = async (_) => {
-  const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
-    apiVersion: '2020-08-27',
-  });
-
-  const res = await stripe.prices.list({
-    limit: 100,
-    expand: ['data.product'],
-  });
-
-  const prices = res.data.filter((price) => price.active);
-
-  const paths = prices.map((p: Stripe.Price) => {
-    return {
-      params: {
-        id: `${p.id}`,
-      },
-    };
-  });
-
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
-      apiVersion: '2020-08-27',
-    });
-
-    const res = await stripe.prices.retrieve(`${params?.id}`, {
-      expand: ['product'],
-    });
-
-    return { props: { item: res }, revalidate: 60 };
-  } catch (err) {
-    return {
-      notFound: true,
-    };
-  }
 };
 
 export default Detail;
