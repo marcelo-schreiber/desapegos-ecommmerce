@@ -11,7 +11,23 @@ export function getProductDescription(product: any) {
 }
 
 export function getProductImageArray(product: any) {
-  return product?.metadata ? Object.values(product?.metadata) : [];
+  const metadata = Object.freeze(product?.metadata);
+
+  const imgArr = Object.keys(metadata)
+    .filter((key) => !key.includes('tipo'))
+    .map((key) => metadata[`${key}`]);
+
+  return product?.metadata ? imgArr : [];
+}
+
+export function getProductType(product: any) {
+  const metadata = Object.freeze(product?.metadata);
+
+  const productType = Object.keys(metadata)
+    .filter((key) => key.includes('tipo'))
+    .map((key) => metadata[`${key}`]);
+
+  return product?.metadata ? productType[0] : [];
 }
 
 export function getPriceTotal(price: any) {
