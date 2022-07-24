@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
     (price) => getProductType(price.product) === 'moda'
   );
   const pricesJogos = prices.filter(
-    (price) => getProductType(price.product) === 'eletronicos'
+    (price) => getProductType(price.product) === 'eletronico'
   );
   const pricesUtilidade = prices.filter(
     (price) => getProductType(price.product) === 'utilidade'
@@ -90,7 +90,7 @@ const Products: NextPage<Props> = ({
           href="javascript: void(0)"
           onClick={() => setProducts(pricesUtilidade)}
         >
-          Utilidades e Eletrodomésticos
+          Utilidades domésticas
         </a>
         <a
           href="javascript: void(0)"
@@ -104,6 +104,11 @@ const Products: NextPage<Props> = ({
           <Product key={p.id} price={p} />
         ))}
       </ProductsContainer>
+      {products.length === 0 && (
+        <p style={{ fontSize: '5rem', textAlign: 'center', marginTop: '4rem' }}>
+          Ainda não há produtos dessa categoria.
+        </p>
+      )}
     </>
   );
 };
