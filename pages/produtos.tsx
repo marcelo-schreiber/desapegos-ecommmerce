@@ -71,6 +71,7 @@ const Products: NextPage<Props> = ({
     <>
       <Head>
         <title>Palivendas | Produtos</title>
+        <meta name="title" content="Palivendas: Produtos" />
       </Head>
       <Header index={2} />
       <FilterContainer>

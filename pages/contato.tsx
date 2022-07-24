@@ -83,6 +83,7 @@ const Contact: NextPage = () => {
       <Head>
         <title>Palivendas | Contato</title>
         <meta name="robots" content="noindex, nofollow" />
+        <meta name="title" content="Palivendas: Contato" />
       </Head>
       <Header index={3} />
       <ToastContainer />
