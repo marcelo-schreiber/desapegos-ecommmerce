@@ -4,7 +4,7 @@ export const VolksCar = {
     name: 'Volkswagen Crossfox 1.6 Total Flex 5p',
     images: ['/images/cross/01.jpg'],
     metadata: {
-      tipo: 'anuncios',
+      tipo: 'carros',
       '1': '/images/cross/02.jpg',
       '2': '/images/cross/especificacoes.png',
       '3': '/images/cross/03.jpg',
@@ -34,7 +34,7 @@ export const nissanCar = {
     name: 'Nissan Leaf 40kwh 100% Elétrico 2020',
     images: ['/images/nissan/01.jpg'],
     metadata: {
-      tipo: 'anuncios',
+      tipo: 'carros',
       '1': '/images/nissan/02.jpg',
       '2': '/images/nissan/03.jpg',
       '3': '/images/nissan/04.jpg',
