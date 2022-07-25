@@ -6,14 +6,10 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Ripples from 'react-ripples';
 import Image from 'next/image';
-import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Palivendas | Home</title>
-      </Head>
       <Header index={1} />
       <ContentWrapper>
         <TopSideWrapper>

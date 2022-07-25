@@ -37,6 +37,23 @@ class MyDocument extends Document {
             name="keywords"
             content="palivendas, melhor, compra, barato, usado, brasil, seminovo, curitiba, frete, jogos, ps4, carro, nissan, volkswagen, paraná, pr, 15 mil"
           />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="palivendas.cf" />
+          <meta property="twitter:url" content="https://palivendas.cf" />
+          <meta
+            name="twitter:title"
+            content="Palivendas: compre no melhor preço de Curitiba"
+          />
+          <meta
+            name="twitter:description"
+            content="Negocie e compre os melhores e mais Baratos produtos da Palivendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
+          />
+          <meta
+            name="twitter:image"
+            content="https://palivendas.cf/logo512.png"
+          />
+
           <meta
             name="google-site-verification"
             content="-6-HBjMJtkvjeNGG-ZD6Hfh9TEdK2L1gZlTHMnB3xfk"
