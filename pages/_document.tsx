@@ -37,7 +37,7 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="keywords"
-            content="palivendas, melhor, compra, barato, eletrodomésticos, usado, seminovo, curitiba, curitiba e região, frete, jogos, ps4, carro, nissan, volkswagen, paraná, pr"
+            content="palivendas, melhor, compra, barato, usado, seminovo, curitiba, curitiba e região, frete, jogos, ps4, carro, nissan, volkswagen, paraná, pr, 15 mil"
           />
           <meta
             name="google-site-verification"
