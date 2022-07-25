@@ -104,6 +104,8 @@ const ExploreButton = styled.button`
   font-weight: 600;
   font-size: 3.6rem;
 
+  background-color: #ac6411;
+
   color: #ffffff;
   border-radius: 2rem;
 
@@ -112,8 +114,7 @@ const ExploreButton = styled.button`
 
   cursor: pointer;
 
-  transition: 0.2s ease-in;
-  background-color: #ac6411;
+  transition: background-color 0.2s ease-in;
 
   :hover {
     background-color: #78460c;
