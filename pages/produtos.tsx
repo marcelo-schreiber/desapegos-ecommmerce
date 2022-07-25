@@ -85,13 +85,13 @@ const Products: NextPage<Props> = ({
       </Head>
       <Header index={2} />
       <FilterContainer>
-        <a onClick={() => setProducts(prices)}>Todos</a>
-        <a onClick={() => setProducts(pricesSom)}>Som e áudio</a>
-        <a onClick={() => setProducts(pricesModa)}>Moda e Beleza</a>
-        <a onClick={() => setProducts(pricesJogos)}>Eletrônicos e Jogos</a>
-        <a onClick={() => setProducts(pricesCarros)}>Carros</a>
-        <a onClick={() => setProducts(pricesAnuncio)}>Anúncios e Serviços</a>
-        <a onClick={() => setProducts(pricesUtilidade)}>Eletrodomésticos</a>
+        <h2 onClick={() => setProducts(prices)}>Todos</h2>
+        <h2 onClick={() => setProducts(pricesSom)}>Som e áudio</h2>
+        <h2 onClick={() => setProducts(pricesModa)}>Moda e Beleza</h2>
+        <h2 onClick={() => setProducts(pricesJogos)}>Eletrônicos e Jogos</h2>
+        <h2 onClick={() => setProducts(pricesCarros)}>Carros</h2>
+        <h2 onClick={() => setProducts(pricesAnuncio)}>Anúncios e Serviços</h2>
+        <h2 onClick={() => setProducts(pricesUtilidade)}>Eletrodomésticos</h2>
       </FilterContainer>
       <ProductsContainer>
         {products.map((p) => (
@@ -109,11 +109,17 @@ const Products: NextPage<Props> = ({
 
 const FilterContainer = styled.ul`
   margin: 0 0.5rem 8rem 0.5rem;
-  font-size: 1.85rem;
-  text-align: center;
 
-  > a {
-    margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > h2 {
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.85rem;
+    font-weight: normal;
+    margin: 0.1rem 2rem;
 
     :hover {
       text-decoration: underline;
@@ -127,7 +133,7 @@ const FilterContainer = styled.ul`
     align-items: center;
     gap: 1.8rem;
 
-    > a {
+    > h2 {
       margin: 0;
     }
   }

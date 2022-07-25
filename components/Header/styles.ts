@@ -18,7 +18,7 @@ export const HeaderWrapper = styled.header<{ idx: number }>`
     justify-content: space-evenly;
   }
 
-  h2 {
+  a {
     margin: 0 6rem;
     color: #534fc8;
 
@@ -36,7 +36,7 @@ export const HeaderWrapper = styled.header<{ idx: number }>`
     font-weight: 300;
   }
 
-  h2:nth-child(${(props) => props.idx}) {
+  a:nth-child(${(props) => props.idx}) {
     /* Adds semibold on current page nav */
     font-weight: 600;
   }

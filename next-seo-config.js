@@ -5,7 +5,7 @@ const description =
 export const SEO = {
   title,
   description,
-  canonical: 'https://palivendas.cf',
+  canonical: 'https://palivendas.vercel.app',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',

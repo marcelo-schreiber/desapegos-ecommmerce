@@ -18,13 +18,13 @@ function Header({ index }: currPage) {
       </Link>
       <nav>
         <Link href="/">
-          <h2>Home</h2>
+          <a>Home</a>
         </Link>
         <Link href="/produtos">
-          <h2>Produtos</h2>
+          <a>Produtos</a>
         </Link>
         <Link href="/contato">
-          <h2>Contato</h2>
+          <a>Contato</a>
         </Link>
       </nav>
     </HeaderWrapper>
