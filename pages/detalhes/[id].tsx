@@ -93,7 +93,7 @@ const Detail = ({ item }: Props) => {
                           src={`${url}`}
                           alt={`${name} ${idx}`}
                           width={1244}
-                          height={700}
+                          height={800}
                           objectFit="cover"
                         />
                       </Slide>
