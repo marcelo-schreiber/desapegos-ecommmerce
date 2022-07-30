@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <ImageWrapper>
             <Image
               src="/shopping.png"
-              alt="mulher comprando no palivendas"
+              alt="Mulher comprando na palivendas"
               width={633}
               height={478}
             />

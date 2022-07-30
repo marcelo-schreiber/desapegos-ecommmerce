@@ -20,7 +20,9 @@ function Product({ price }: Props) {
   return (
     <CardContainer>
       <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>
-        <CardTitle>{getProductName(price.product)}</CardTitle>
+        <a>
+          <CardTitle>{getProductName(price.product)}</CardTitle>
+        </a>
       </Link>
       <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>
         <div
