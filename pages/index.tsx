@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <TopSideWrapper>
           <SideParagraph>
             Conheça nossos produtos <b>exclusivos</b>
-            <div style={{ marginTop: '7rem' }}>
+            <div>
               <Link href="/produtos">
                 <Ripples>
                   <ExploreButton>Explorar</ExploreButton>
@@ -35,13 +35,7 @@ const Home: NextPage = () => {
       </ContentWrapper>
 
       <SubTitle>Quem somos</SubTitle>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+      <AboutWrapper>
         <AboutSection>
           <b>Todo mundo tem algo que precisa desapegar</b>, mas não tem tempo
           para ficar anunciando ou negociando os desapegos;
@@ -56,12 +50,18 @@ const Home: NextPage = () => {
           imagens reais, valores, notas fiscais ou recibos e informações
           detalhadas de seus produtos bem como o serviço de entrega.
         </AboutSection>
-      </div>
+      </AboutWrapper>
     </>
   );
 };
 
 export default Home;
+
+const AboutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const ContentWrapper = styled.main`
   width: 75vw;
@@ -94,6 +94,10 @@ const SideParagraph = styled.div`
   max-width: 50rem;
 
   margin-bottom: 6.5rem;
+
+  > div {
+    margin-top: 7rem;
+  }
 `;
 
 const ExploreButton = styled.button`
