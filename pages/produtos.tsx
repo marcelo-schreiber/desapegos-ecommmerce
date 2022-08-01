@@ -39,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   );
 
   const pricesUtilidade = prices.filter(
-    (price) => getProductType(price.product) === 'utlidade'
+    (price) => getProductType(price.product) === 'eletrodomesticos'
   );
 
   const pricesCarros = [VolksCar, nissanCar];
