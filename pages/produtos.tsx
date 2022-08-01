@@ -42,8 +42,11 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
     (price) => getProductType(price.product) === 'eletrodomesticos'
   );
 
-  const pricesCarros = [VolksCar, nissanCar];
-
+  const pricesCarros = [
+    ...prices.filter((price) => getProductType(price.product) === 'carros'),
+    VolksCar,
+    nissanCar,
+  ];
   return {
     props: {
       prices,
