@@ -5,9 +5,12 @@ import Product from '../components/Product/Product';
 import Header from '../components/Header/Header';
 import styled from 'styled-components';
 import Head from 'next/head';
-import { getProductType } from '../utils/computed';
-import { useState } from 'react';
+import { getProductId, getProductType } from '../utils/computed';
+import { useEffect, useState } from 'react';
 import { VolksCar, nissanCar } from '../data/cars';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const getServerSideProps: GetServerSideProps = async (_) => {
   const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
@@ -18,6 +21,11 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
     limit: 100,
     expand: ['data.product'],
   });
+
+  const prom = await stripe.promotionCodes.retrieve(
+    'promo_1LSq5LDPtxs3Uh3pXDnS2VhT',
+    { expand: ['coupon.applies_to'] }
+  );
 
   const prices = [
     ...res.data.filter((price) => price.active),
@@ -45,6 +53,10 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   const pricesCarros = prices.filter(
     (price) => getProductType(price.product) === 'carros'
   );
+
+  const productsIds = prom.coupon.applies_to?.products;
+  // productsIds?.some((name) => name === price.id)
+
   return {
     props: {
       prices,
@@ -54,6 +66,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
       pricesUtilidade,
       pricesAnuncio,
       pricesCarros,
+      productsIds,
     },
   };
 };
@@ -66,6 +79,7 @@ type Props = {
   pricesUtilidade: Stripe.Price[];
   pricesCarros: Stripe.Price[];
   pricesAnuncio: Stripe.Price[];
+  productsIds: string[];
 };
 
 const Products: NextPage<Props> = ({
@@ -76,15 +90,25 @@ const Products: NextPage<Props> = ({
   pricesCarros,
   pricesUtilidade,
   pricesAnuncio,
+  productsIds,
 }) => {
   const [products, setProducts] = useState(prices);
+
+  useEffect(() => {
+    toast.info('Utilize o cupom PALI5, para receber 5%', {
+      autoClose: 10000,
+    });
+  }, []);
+
   return (
     <>
       <Head>
         <title>Palivendas | Produtos</title>
         <meta name="title" content="Palivendas: Produtos exclusivos" />
       </Head>
+
       <Header index={2} />
+
       <FilterContainer>
         <h2 onClick={() => setProducts(prices)}>Todos</h2>
         <h2 onClick={() => setProducts(pricesSom)}>Som e áudio</h2>
@@ -95,10 +119,17 @@ const Products: NextPage<Props> = ({
         <h2 onClick={() => setProducts(pricesUtilidade)}>Eletrodomésticos</h2>
       </FilterContainer>
       <ProductsContainer>
-        {products.map((p) => (
-          <Product key={p.id} price={p} />
-        ))}
+        {products.map((p) => {
+          return productsIds?.some(
+            (name) => name === getProductId(p.product)
+          ) ? (
+            <Product key={p.id} price={p} isOnDiscount={true} />
+          ) : (
+            <Product key={p.id} price={p} isOnDiscount={false} />
+          );
+        })}
       </ProductsContainer>
+      <ToastContainer />
       {products.length === 0 && (
         <p style={{ fontSize: '5rem', textAlign: 'center', marginTop: '4rem' }}>
           Ainda não há produtos dessa categoria.

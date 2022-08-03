@@ -3,12 +3,10 @@ import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import styled from 'styled-components';
 import Ripples from 'react-ripples';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Success: NextPage = () => {
-  const router = useRouter();
-
   return (
     <>
       <Head>
@@ -24,7 +22,11 @@ const Success: NextPage = () => {
             úteis.
           </SideParagraph>
           <Ripples>
-            <Button onClick={() => router.back()}>Início</Button>
+            <Link href="/produtos">
+              <Button>
+                <a>Início</a>
+              </Button>
+            </Link>
           </Ripples>
         </Div>
       </Wrapper>

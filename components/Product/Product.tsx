@@ -1,7 +1,14 @@
 import Link from 'next/link';
 
-import { FaInfoCircle } from 'react-icons/fa';
-import { CardPrice, CardContainer, CardTitle, Button, Price } from './styles';
+import { FaInfoCircle, FaPercentage } from 'react-icons/fa';
+import {
+  CardPrice,
+  CardContainer,
+  CardTitle,
+  Button,
+  Price,
+  Discount,
+} from './styles';
 import Stripe from 'stripe';
 import Image from 'next/image';
 
@@ -13,12 +20,13 @@ import {
 
 interface Props {
   price: Stripe.Price;
-  key: string;
+  isOnDiscount: boolean;
 }
 
-function Product({ price }: Props) {
+function Product({ price, isOnDiscount }: Props) {
   return (
     <CardContainer>
+      {isOnDiscount && <Discount>-5%</Discount>}
       <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>
         <a>
           <CardTitle>{getProductName(price.product)}</CardTitle>

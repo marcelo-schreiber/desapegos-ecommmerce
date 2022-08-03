@@ -30,6 +30,14 @@ export const CardContainer = styled.div`
   }
 `;
 
+export const Discount = styled.div`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  font-size: 2.65rem;
+`;
+
 export const CardPrice = styled.div`
   font-weight: normal;
   font-size: 2.65rem;

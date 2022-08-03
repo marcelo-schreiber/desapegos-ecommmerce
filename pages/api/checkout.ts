@@ -38,6 +38,7 @@ export default async function handler(
       cancel_url: `${baseUrl}/produtos`,
       line_items: [body],
       mode: 'payment',
+      allow_promotion_codes: true,
     });
 
     res.status(201).json({ session });

@@ -2,6 +2,10 @@ export function getProductName(product: any) {
   return product?.name;
 }
 
+export function getProductId(product: any) {
+  return product?.id;
+}
+
 export function getProductImage(product: any) {
   return product?.images[0];
 }
