@@ -72,7 +72,6 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
       pricesCarros,
       productsIds,
     },
-    revalidate: 300,
   };
 };
 
