@@ -95,7 +95,7 @@ const Products: NextPage<Props> = ({
   const [products, setProducts] = useState(prices);
 
   useEffect(() => {
-    toast.info('Utilize o cupom PALI5, para receber 5%', {
+    toast.info('Utilize o cupom PALI5, para receber 5% em certos produtos', {
       autoClose: 10000,
     });
   }, []);
