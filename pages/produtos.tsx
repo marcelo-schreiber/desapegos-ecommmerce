@@ -22,9 +22,14 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
     expand: ['data.product'],
   });
 
-  const prom = await stripe.promotionCodes.retrieve('desconto', {
-    expand: ['coupon.applies_to'],
-  });
+  const firstPromotionCode = await stripe.promotionCodes.list({});
+
+  const prom = await stripe.promotionCodes.retrieve(
+    firstPromotionCode.data[0].id,
+    {
+      expand: ['coupon.applies_to'],
+    }
+  );
 
   const prices = [
     ...res.data.filter((price) => price.active),
@@ -67,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
       pricesCarros,
       productsIds,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 };
 
