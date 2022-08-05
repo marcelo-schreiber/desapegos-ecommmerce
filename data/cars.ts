@@ -59,3 +59,25 @@ export const nissanCar = {
   },
   unit_amount: 20290000,
 };
+
+export const RoupasBebe = {
+  id: 'prod-roupasbebe',
+  product: {
+    name: 'Roupinhas de Bebês Sob Encomenda em Crochê',
+    images: ['/images/roupa/02.jpg'],
+    metadata: {
+      tipo: 'moda',
+      '1': '/images/roupa/03.jpg',
+      '2': '/images/roupa/05.jpg',
+      '3': '/images/roupa/06.jpg',
+      '4': '/images/roupa/08.jpg',
+    },
+    Location: `Localização: Zona Sul de São Paulo e aceito encomendas de outros estados
+    mediante taxa de postagem dos Correios`,
+    item1: '- Capinhas (mantas com ou sem capuz)',
+    item2: '- Toalhinhas limpa boca personalizada com o nome (opcional)',
+    item3: '- Sapatinhos',
+    item4: '- Toucas (gorros infantis e adultos)',
+    item5: '- Outras peças sob consulta',
+  },
+};

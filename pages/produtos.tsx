@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import { getProductId, getProductType } from '../utils/computed';
 import { useEffect, useState } from 'react';
-import { VolksCar, nissanCar } from '../data/cars';
+import { VolksCar, nissanCar, RoupasBebe } from '../data/cars';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,7 +35,9 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
     ...res.data.filter((price) => price.active),
     VolksCar,
     nissanCar,
+    RoupasBebe,
   ];
+
   const pricesSom = prices.filter(
     (price) => getProductType(price.product) === 'som'
   );

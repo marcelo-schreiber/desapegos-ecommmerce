@@ -35,10 +35,10 @@ export function getProductType(product: any) {
 }
 
 export function getPriceTotal(price: any) {
-  return price
+  return price.unit_amount
     ? Number(price.unit_amount / 100).toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
       })
-    : 'A negociar'; // add commas
+    : 'A negociar';
 }
