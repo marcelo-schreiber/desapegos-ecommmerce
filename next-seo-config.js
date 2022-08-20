@@ -1,4 +1,4 @@
-const title = "desapegos: compre no melhor preço de Curitiba";
+const title = "Desapegos: compre no melhor preço de Curitiba";
 const description =
   "Negocie e compre os melhores e mais Baratos produtos da desapegos, você pode negociar produtos Usados, semi novos e novos com Frete Grátis.";
 

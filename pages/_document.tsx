@@ -64,7 +64,6 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="theme-color" content="#C28C3A" />
-          <link rel="mask-icon" href="/maskable_icon_x1" color="#C28C3A" />
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
