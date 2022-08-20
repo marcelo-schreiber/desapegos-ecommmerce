@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.header<{ idx: number }>`
   display: flex;
@@ -20,9 +20,9 @@ export const HeaderWrapper = styled.header<{ idx: number }>`
 
   a {
     margin: 0 6rem;
-    color: #534fc8;
+    color: #2b2929;
 
-    font-family: 'Poppins', --apple-system, sans-serif;
+    font-family: "Poppins", --apple-system, sans-serif;
     font-size: 2.7rem;
 
     transition: 0.1s ease-in;
@@ -30,7 +30,7 @@ export const HeaderWrapper = styled.header<{ idx: number }>`
     cursor: pointer;
 
     :hover {
-      color: #2e2b88;
+      color: #1a1919;
     }
 
     font-weight: 300;

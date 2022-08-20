@@ -1,25 +1,25 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from "next";
 
-import Stripe from 'stripe';
-import Product from '../components/Product/Product';
-import Header from '../components/Header/Header';
-import styled from 'styled-components';
-import Head from 'next/head';
-import { getProductId, getProductType } from '../utils/computed';
-import { useEffect, useState } from 'react';
-import { VolksCar, nissanCar, RoupasBebe } from '../data/cars';
+import Stripe from "stripe";
+import Product from "../components/Product/Product";
+import Header from "../components/Header/Header";
+import styled from "styled-components";
+import Head from "next/head";
+import { getProductId, getProductType } from "../utils/computed";
+import { useEffect, useState } from "react";
+import { VolksCar, nissanCar, RoupasBebe } from "../data/cars";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const getServerSideProps: GetServerSideProps = async (_) => {
-  const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
-    apiVersion: '2020-08-27',
+  const stripe = new Stripe(process.env.SECRET_KEY ?? "", {
+    apiVersion: "2020-08-27",
   });
 
   const res = await stripe.prices.list({
     limit: 100,
-    expand: ['data.product'],
+    expand: ["data.product"],
   });
 
   const firstPromotionCode = await stripe.promotionCodes.list({});
@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   const prom = await stripe.promotionCodes.retrieve(
     firstPromotionCode.data[0].id,
     {
-      expand: ['coupon.applies_to'],
+      expand: ["coupon.applies_to"],
     }
   );
 
@@ -39,25 +39,25 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   ];
 
   const pricesSom = prices.filter(
-    (price) => getProductType(price.product) === 'som'
+    (price) => getProductType(price.product) === "som"
   );
 
   const pricesModa = prices.filter(
-    (price) => getProductType(price.product) === 'moda'
+    (price) => getProductType(price.product) === "moda"
   );
   const pricesJogos = prices.filter(
-    (price) => getProductType(price.product) === 'eletronico'
+    (price) => getProductType(price.product) === "eletronico"
   );
   const pricesAnuncio = prices.filter(
-    (price) => getProductType(price.product) === 'anuncio'
+    (price) => getProductType(price.product) === "anuncio"
   );
 
   const pricesUtilidade = prices.filter(
-    (price) => getProductType(price.product) === 'eletrodomesticos'
+    (price) => getProductType(price.product) === "eletrodomesticos"
   );
 
   const pricesCarros = prices.filter(
-    (price) => getProductType(price.product) === 'carros'
+    (price) => getProductType(price.product) === "carros"
   );
 
   const productsIds = prom.coupon.applies_to?.products;
@@ -101,7 +101,7 @@ const Products: NextPage<Props> = ({
   const [products, setProducts] = useState(prices);
 
   useEffect(() => {
-    toast.info('Utilize o cupom PALI5, para receber 5% em certos produtos', {
+    toast.info("Utilize o cupom PALI5, para receber 5% em certos produtos", {
       autoClose: 10000,
     });
   }, []);
@@ -109,8 +109,8 @@ const Products: NextPage<Props> = ({
   return (
     <>
       <Head>
-        <title>Palivendas | Produtos</title>
-        <meta name="title" content="Palivendas: Produtos exclusivos" />
+        <title>Desapegos | Produtos</title>
+        <meta name="title" content="desapegos: Produtos exclusivos" />
       </Head>
 
       <Header index={2} />
@@ -137,7 +137,7 @@ const Products: NextPage<Props> = ({
       </ProductsContainer>
       <ToastContainer />
       {products.length === 0 && (
-        <p style={{ fontSize: '5rem', textAlign: 'center', marginTop: '4rem' }}>
+        <p style={{ fontSize: "5rem", textAlign: "center", marginTop: "4rem" }}>
           Ainda não há produtos dessa categoria.
         </p>
       )}

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CardContainer = styled.div`
   display: flex;
@@ -88,10 +88,10 @@ export const Button = styled.button`
 
   transition: 0.2s ease-in;
 
-  background-color: #ac6411;
+  background-color: #c28c3a;
 
   :hover {
-    background-color: #78460c;
+    background-color: #886229;
   }
 
   > svg {

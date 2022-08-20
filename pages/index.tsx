@@ -1,11 +1,11 @@
-import React from 'react';
-import { NextPage } from 'next/types';
-import Header from '../components/Header/Header';
+import React from "react";
+import { NextPage } from "next/types";
+import Header from "../components/Header/Header";
 
-import styled from 'styled-components';
-import Link from 'next/link';
-import Ripples from 'react-ripples';
-import Image from 'next/image';
+import styled from "styled-components";
+import Link from "next/link";
+import Ripples from "react-ripples";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -25,8 +25,8 @@ const Home: NextPage = () => {
           </SideParagraph>
           <ImageWrapper>
             <Image
-              src="/shopping.png"
-              alt="Mulher comprando na palivendas"
+              src="/shopping.svg"
+              alt="Mulher comprando na desapegos"
               width={633}
               height={478}
             />
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           para ficar anunciando ou negociando os desapegos;
         </AboutSection>
         <AboutSection>
-          A <h1>Palivendas</h1> é um site de tecnologia que oferece soluções de
+          A <h1>desapegos</h1> é um site de tecnologia que oferece soluções de
           desapegos para que pessoas e empresas possam comprar, vender ou
           oferecer seus serviços;
         </AboutSection>
@@ -104,7 +104,7 @@ const ExploreButton = styled.button`
   font-weight: 600;
   font-size: 3.6rem;
 
-  background-color: #ac6411;
+  background-color: #c28c3a;
 
   color: #ffffff;
   border-radius: 2rem;
@@ -117,7 +117,7 @@ const ExploreButton = styled.button`
   transition: background-color 0.2s ease-in;
 
   :hover {
-    background-color: #78460c;
+    background-color: #886229;
   }
 `;
 

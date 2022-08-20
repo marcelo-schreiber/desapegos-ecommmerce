@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // styles || components
-import { FaEnvelopeOpen } from 'react-icons/fa';
+import { FaEnvelopeOpen } from "react-icons/fa";
 
-import Ripples from 'react-ripples';
+import Ripples from "react-ripples";
 
 // form
-import axios from 'axios';
-import ReactLoading from 'react-loading';
+import axios from "axios";
+import ReactLoading from "react-loading";
 
 // toast pop-up
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { NextPage } from 'next/types';
-import Header from '../components/Header/Header';
-import formSchema from '../utils/formSchema';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { NextPage } from "next/types";
+import Header from "../components/Header/Header";
+import formSchema from "../utils/formSchema";
 
 const Contact: NextPage = () => {
   const [serverState, setServerState] = useState({
@@ -22,10 +22,10 @@ const Contact: NextPage = () => {
   });
 
   const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    motivo: '',
-    detalhes: '',
+    nome: "",
+    email: "",
+    motivo: "",
+    detalhes: "",
   });
 
   const handleChange = (
@@ -48,20 +48,20 @@ const Contact: NextPage = () => {
       const form: any = e.target;
       setServerState({ submitting: true });
       axios({
-        method: 'post',
-        url: '',
+        method: "post",
+        url: "",
         data: new FormData(form),
       })
         .then(() => {
-          toast.success('Seu email foi enviado');
+          toast.success("Seu email foi enviado");
           handleServerResponse(true);
         })
         .catch(() => {
-          toast.error('Um erro ocorreu ao enviar seu email');
+          toast.error("Um erro ocorreu ao enviar seu email");
           handleServerResponse(false);
         });
     } catch (e: any) {
-      toast.error(e?.message ?? 'Um erro aconteceu :(');
+      toast.error(e?.message ?? "Um erro aconteceu :(");
     }
   };
 
@@ -71,24 +71,24 @@ const Contact: NextPage = () => {
     });
     if (ok)
       setFormData({
-        nome: '',
-        email: '',
-        motivo: '',
-        detalhes: '',
+        nome: "",
+        email: "",
+        motivo: "",
+        detalhes: "",
       });
   };
 
   return (
     <>
       <Head>
-        <title>Palivendas | Contato</title>
+        <title>desapegos | Contato</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="title" content="Palivendas: Contato" />
+        <meta name="title" content="desapegos: Contato" />
       </Head>
       <Header index={3} />
       <ToastContainer />
       <ContactTitleWrapper>
-        <FaEnvelopeOpen size={36} style={{ margin: '0 auto' }} />
+        <FaEnvelopeOpen size={36} style={{ margin: "0 auto" }} />
         <ContactTitle>Envie um email</ContactTitle>
       </ContactTitleWrapper>
 
@@ -140,7 +140,7 @@ const Contact: NextPage = () => {
                 width={20}
               />
             ) : (
-              'Enviar'
+              "Enviar"
             )}
           </SendEmailButton>
         </Ripples>
@@ -149,8 +149,8 @@ const Contact: NextPage = () => {
   );
 };
 
-import styled from 'styled-components';
-import Head from 'next/head';
+import styled from "styled-components";
+import Head from "next/head";
 
 const ContactTitleWrapper = styled.div`
   display: flex;
@@ -252,10 +252,10 @@ const SendEmailButton = styled.button`
 
   margin: 0;
 
-  background-color: #ac6411;
+  background-color: #c28c3a;
 
   :hover {
-    background-color: #78460c;
+    background-color: #886229;
   }
 `;
 

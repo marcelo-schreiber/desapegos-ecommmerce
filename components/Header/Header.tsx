@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { HeaderWrapper, Logo } from './styles';
+import Link from "next/link";
+import { HeaderWrapper, Logo } from "./styles";
 
 interface currPage {
   index: number;
@@ -10,10 +10,10 @@ function Header({ index }: currPage) {
     <HeaderWrapper idx={index}>
       <Link href="/">
         <Logo
-          src={'/logo153.png'}
+          src={"/logo512.png"}
           width={153}
           height={153}
-          alt="palivendas logo"
+          alt="desapegos logo"
         />
       </Link>
       <nav>

@@ -1,6 +1,6 @@
 {
-  "short_name": "Palivendas",
-  "name": "Palivendas",
+  "short_name": "desapegos",
+  "name": "desapegos",
   "icons": [
     {
       "src": "favicon.ico",
@@ -26,6 +26,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#534FC8",
-  "background_color": "#F5F5F5"
+  "theme_color": "#C28C3A",
+  "background_color": "#2b2929"
 }

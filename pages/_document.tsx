@@ -5,7 +5,7 @@ import Document, {
   Head,
   Main,
   NextScript,
-} from 'next/document';
+} from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(
@@ -35,23 +35,23 @@ class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta
             name="keywords"
-            content="palivendas, melhor, compra, barato, usado, brasil, seminovo, curitiba, frete, jogos, ps4, carro, nissan, volkswagen, paraná, pr, 15 mil"
+            content="desapegos, melhor, compra, barato, usado, brasil, seminovo, curitiba, frete, jogos, ps4, carro, nissan, volkswagen, paraná, pr, 15 mil"
           />
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:domain" content="palivendas.cf" />
-          <meta property="twitter:url" content="https://palivendas.cf" />
+          <meta property="twitter:domain" content="desapegos.online" />
+          <meta property="twitter:url" content="https://desapegos.online" />
           <meta
             name="twitter:title"
-            content="Palivendas: compre no melhor preço de Curitiba"
+            content="desapegos: compre no melhor preço de Curitiba"
           />
           <meta
             name="twitter:description"
-            content="Negocie e compre os melhores e mais Baratos produtos da Palivendas, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
+            content="Negocie e compre os melhores e mais Baratos produtos da desapegos, você pode negociar produtos Usados, semi novos e novos com Frete Grátis."
           />
           <meta
             name="twitter:image"
-            content="https://palivendas.cf/logo512.png"
+            content="https://desapegos.online/logo512.png"
           />
 
           <meta
@@ -63,8 +63,8 @@ class MyDocument extends Document {
           <meta name="language" content="Portuguese" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="shortcut icon" href="/favicon.ico" />
-          <meta name="theme-color" content="#534FC8" />
-          <link rel="mask-icon" href="/maskable_icon_x1" color="#534FC8" />
+          <meta name="theme-color" content="#C28C3A" />
+          <link rel="mask-icon" href="/maskable_icon_x1" color="#C28C3A" />
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

@@ -1,16 +1,16 @@
-import { NextPage } from 'next/types';
-import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
-import styled from 'styled-components';
-import Ripples from 'react-ripples';
-import Head from 'next/head';
-import Link from 'next/link';
+import { NextPage } from "next/types";
+import React from "react";
+import { FaCheckCircle } from "react-icons/fa";
+import styled from "styled-components";
+import Ripples from "react-ripples";
+import Head from "next/head";
+import Link from "next/link";
 
 const Success: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Palivendas | Compra realizada</title>
+        <title>Desapegos | Compra realizada</title>
       </Head>
       <Wrapper>
         <Div>
@@ -57,10 +57,10 @@ const Button = styled.button`
 
   margin: 0;
 
-  background-color: #ac6411;
+  background-color: #c28c3a;
 
   :hover {
-    background-color: #78460c;
+    background-color: #886229;
   }
 `;
 

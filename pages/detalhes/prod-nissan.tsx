@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 import {
   CarouselProvider,
@@ -7,26 +7,26 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
-} from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
-import { FaAngleLeft, FaAngleRight, FaWhatsapp } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight, FaWhatsapp } from "react-icons/fa";
 import {
   getProductName,
   getPriceTotal,
   getProductDescription,
   getProductImage,
   getProductImageArray,
-} from '../../utils/computed';
-import checkout from '../../utils/checkout';
+} from "../../utils/computed";
+import checkout from "../../utils/checkout";
 
-import Ripples from 'react-ripples';
-import Header from '../../components/Header/Header';
+import Ripples from "react-ripples";
+import Header from "../../components/Header/Header";
 
-import styled from 'styled-components';
-import Head from 'next/head';
-import Link from 'next/link';
-import { nissanCar } from '../../data/cars';
+import styled from "styled-components";
+import Head from "next/head";
+import Link from "next/link";
+import { nissanCar } from "../../data/cars";
 
 const Detail = () => {
   const item = nissanCar;
@@ -35,7 +35,7 @@ const Detail = () => {
   const images =
     [...getProductImageArray(item.product), getProductImage(item.product)] ||
     [];
-  const title = `Palivendas | ${name}`;
+  const title = `Desapegos | ${name}`;
 
   return (
     <>
@@ -55,8 +55,8 @@ const Detail = () => {
       </Head>
       <Header index={2} />
 
-      <div style={{ position: 'relative', margin: '5rem 0' }}>
-        <Link href={'/produtos'}>
+      <div style={{ position: "relative", margin: "5rem 0" }}>
+        <Link href={"/produtos"}>
           <GoBackButton>
             <FaAngleLeft />
             Voltar
@@ -71,17 +71,17 @@ const Detail = () => {
             <LocationSubtitle>
               *Ficha técnica e mais detalhes nas imagens.
             </LocationSubtitle>
-            <div style={{ margin: '2rem 0' }}>
+            <div style={{ margin: "2rem 0" }}>
               <CarouselProvider
                 naturalSlideWidth={1244}
                 naturalSlideHeight={800}
                 totalSlides={images.length}
-                playDirection={'forward'}
+                playDirection={"forward"}
                 interval={3000}
                 isPlaying={true}
                 dragEnabled={images.length > 1}
               >
-                <Slider style={{ cursor: 'grab' }}>
+                <Slider style={{ cursor: "grab" }}>
                   {images?.map((url: string, idx: number) => {
                     return (
                       <Slide index={idx} key={idx}>
@@ -98,24 +98,24 @@ const Detail = () => {
                 </Slider>
                 {images?.length > 1 && (
                   <div>
-                    <div style={{ position: 'relative' }}>
+                    <div style={{ position: "relative" }}>
                       <ButtonBack
                         style={{
-                          margin: '.5rem 0',
-                          backgroundColor: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer',
+                          margin: ".5rem 0",
+                          backgroundColor: "transparent",
+                          border: "none",
+                          cursor: "pointer",
                         }}
                       >
                         <FaAngleLeft size={32} />
                       </ButtonBack>
                       <ButtonNext
                         style={{
-                          position: 'absolute',
+                          position: "absolute",
                           right: 0,
-                          backgroundColor: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer',
+                          backgroundColor: "transparent",
+                          border: "none",
+                          cursor: "pointer",
                         }}
                       >
                         <FaAngleRight size={32} />
@@ -199,7 +199,7 @@ const GoBackButton = styled.button`
 
   font-size: 3.6rem;
 
-  color: #534fc8;
+  color: #c28c3a;
 
   cursor: pointer;
 `;
@@ -212,7 +212,7 @@ const LocationSubtitle = styled.small`
   display: flex;
   align-items: center;
 
-  color: #534fc8;
+  color: #c28c3a;
 `;
 
 const DetailsTitle = styled.h1`
@@ -220,7 +220,7 @@ const DetailsTitle = styled.h1`
   font-size: 3.6rem;
   line-height: 120%;
 
-  color: #534fc8;
+  color: #c28c3a;
 
   max-width: 94vw;
 
@@ -263,7 +263,7 @@ const DetailText = styled.li`
   max-width: 80rem;
   /* or 29px */
 
-  color: #534fc8;
+  color: #c28c3a;
 
   list-style: none;
 
@@ -277,7 +277,7 @@ const PriceText = styled.div`
 
   font-size: 2.304rem;
 
-  color: #534fc8;
+  color: #c28c3a;
 
   @media only screen and (max-width: 820px) {
     font-size: 3rem;

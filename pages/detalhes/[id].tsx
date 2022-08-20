@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
-import Stripe from 'stripe';
+import type { GetStaticPaths, GetStaticProps } from "next";
+import Image from "next/image";
+import Stripe from "stripe";
 
 import {
   CarouselProvider,
@@ -10,25 +10,25 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
-} from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
-import { FaAngleLeft, FaAngleRight, FaShoppingCart } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight, FaShoppingCart } from "react-icons/fa";
 import {
   getProductName,
   getPriceTotal,
   getProductDescription,
   getProductImage,
   getProductImageArray,
-} from '../../utils/computed';
-import checkout from '../../utils/checkout';
+} from "../../utils/computed";
+import checkout from "../../utils/checkout";
 
-import Ripples from 'react-ripples';
-import Header from '../../components/Header/Header';
+import Ripples from "react-ripples";
+import Header from "../../components/Header/Header";
 
-import styled from 'styled-components';
-import Head from 'next/head';
-import Link from 'next/link';
+import styled from "styled-components";
+import Head from "next/head";
+import Link from "next/link";
 
 interface Props {
   item: Stripe.Price;
@@ -39,7 +39,7 @@ const Detail = ({ item }: Props) => {
   const images =
     [...getProductImageArray(item?.product), getProductImage(item?.product)] ||
     [];
-  const title = `Palivendas | ${name}`;
+  const title = `Desapegos | ${name}`;
 
   return (
     <>
@@ -59,8 +59,8 @@ const Detail = ({ item }: Props) => {
       </Head>
       <Header index={2} />
 
-      <div style={{ position: 'relative', margin: '5rem 0' }}>
-        <Link href={'/produtos'}>
+      <div style={{ position: "relative", margin: "5rem 0" }}>
+        <Link href={"/produtos"}>
           <GoBackButton>
             <FaAngleLeft />
             Voltar
@@ -75,17 +75,17 @@ const Detail = ({ item }: Props) => {
             <LocationSubtitle>
               *Ficha técnica e mais detalhes nas imagens.
             </LocationSubtitle>
-            <div style={{ margin: '2rem 0' }}>
+            <div style={{ margin: "2rem 0" }}>
               <CarouselProvider
                 naturalSlideWidth={1244}
                 naturalSlideHeight={700}
                 totalSlides={images.length}
-                playDirection={'forward'}
+                playDirection={"forward"}
                 interval={3000}
                 isPlaying={true}
                 dragEnabled={images.length > 1}
               >
-                <Slider style={{ cursor: 'grab' }}>
+                <Slider style={{ cursor: "grab" }}>
                   {images?.map((url: string, idx: number) => {
                     return (
                       <Slide index={idx} key={idx}>
@@ -102,24 +102,24 @@ const Detail = ({ item }: Props) => {
                 </Slider>
                 {images?.length > 1 && (
                   <div>
-                    <div style={{ position: 'relative' }}>
+                    <div style={{ position: "relative" }}>
                       <ButtonBack
                         style={{
-                          margin: '.5rem 0',
-                          backgroundColor: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer',
+                          margin: ".5rem 0",
+                          backgroundColor: "transparent",
+                          border: "none",
+                          cursor: "pointer",
                         }}
                       >
                         <FaAngleLeft size={32} />
                       </ButtonBack>
                       <ButtonNext
                         style={{
-                          position: 'absolute',
+                          position: "absolute",
                           right: 0,
-                          backgroundColor: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer',
+                          backgroundColor: "transparent",
+                          border: "none",
+                          cursor: "pointer",
                         }}
                       >
                         <FaAngleRight size={32} />
@@ -159,13 +159,13 @@ const Detail = ({ item }: Props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async (_) => {
-  const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
-    apiVersion: '2020-08-27',
+  const stripe = new Stripe(process.env.SECRET_KEY ?? "", {
+    apiVersion: "2020-08-27",
   });
 
   const res = await stripe.prices.list({
     limit: 100,
-    expand: ['data.product'],
+    expand: ["data.product"],
   });
 
   const prices = res.data.filter((price) => price.active);
@@ -180,18 +180,18 @@ export const getStaticPaths: GetStaticPaths = async (_) => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const stripe = new Stripe(process.env.SECRET_KEY ?? '', {
-      apiVersion: '2020-08-27',
+    const stripe = new Stripe(process.env.SECRET_KEY ?? "", {
+      apiVersion: "2020-08-27",
     });
 
     const res = await stripe.prices.retrieve(`${params?.id}`, {
-      expand: ['product'],
+      expand: ["product"],
     });
 
     return { props: { item: res }, revalidate: 60 };
@@ -222,7 +222,7 @@ const GoBackButton = styled.button`
 
   font-size: 3.6rem;
 
-  color: #534fc8;
+  color: #2b2929;
 
   cursor: pointer;
 `;
@@ -235,7 +235,7 @@ const LocationSubtitle = styled.small`
   display: flex;
   align-items: center;
 
-  color: #534fc8;
+  color: #2b2929;
 `;
 
 const DetailsTitle = styled.h1`
@@ -243,7 +243,7 @@ const DetailsTitle = styled.h1`
   font-size: 3.6rem;
   line-height: 120%;
 
-  color: #534fc8;
+  color: #2b2929;
 
   max-width: 94vw;
 
@@ -286,7 +286,7 @@ const DetailText = styled.li`
   max-width: 80rem;
   /* or 29px */
 
-  color: #534fc8;
+  color: #2b2929;
 
   list-style: none;
 
@@ -300,7 +300,7 @@ const PriceText = styled.div`
 
   font-size: 2.304rem;
 
-  color: #534fc8;
+  color: #2b2929;
 
   @media only screen and (max-width: 820px) {
     font-size: 3rem;
