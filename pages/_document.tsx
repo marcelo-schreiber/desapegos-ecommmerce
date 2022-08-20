@@ -43,7 +43,7 @@ class MyDocument extends Document {
           <meta property="twitter:url" content="https://desapegos.online" />
           <meta
             name="twitter:title"
-            content="desapegos: compre no melhor preço de Curitiba"
+            content="Desapegos: compre no melhor preço de Curitiba"
           />
           <meta
             name="twitter:description"
