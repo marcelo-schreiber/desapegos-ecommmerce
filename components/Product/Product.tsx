@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { FaInfoCircle, FaPercentage } from 'react-icons/fa';
+import { FaInfoCircle, FaPercentage } from "react-icons/fa";
 import {
   CardPrice,
   CardContainer,
@@ -8,15 +8,15 @@ import {
   Button,
   Price,
   Discount,
-} from './styles';
-import Stripe from 'stripe';
-import Image from 'next/image';
+} from "./styles";
+import Stripe from "stripe";
+import Image from "next/image";
 
 import {
   getPriceTotal,
   getProductImage,
   getProductName,
-} from '../../utils/computed';
+} from "../../utils/computed";
 
 interface Props {
   price: Stripe.Price;
@@ -27,18 +27,18 @@ function Product({ price, isOnDiscount }: Props) {
   return (
     <CardContainer>
       {isOnDiscount && <Discount>-5%</Discount>}
-      <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>
+      <Link href={`/produtos/[id]`} as={`/produtos/${price.id}`}>
         <a>
           <CardTitle>{getProductName(price.product)}</CardTitle>
         </a>
       </Link>
-      <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>
+      <Link href={`/produtos/[id]`} as={`/produtos/${price.id}`}>
         <div
           style={{
-            borderRadius: '1.5rem',
-            margin: '2rem 0',
-            overflow: 'hidden',
-            cursor: 'pointer',
+            borderRadius: "1.5rem",
+            margin: "2rem 0",
+            overflow: "hidden",
+            cursor: "pointer",
           }}
         >
           <Image
@@ -55,8 +55,8 @@ function Product({ price, isOnDiscount }: Props) {
         {getPriceTotal(price) && <Price>{getPriceTotal(price)}</Price>}
       </CardPrice>
 
-      <Link href={`/detalhes/[id]`} as={`/detalhes/${price.id}`}>
-        <Button aria-label="detalhes">
+      <Link href={`/produtos/[id]`} as={`/produtos/${price.id}`}>
+        <Button aria-label="Detalhes">
           Detalhes <FaInfoCircle color="#fff" />
         </Button>
       </Link>
