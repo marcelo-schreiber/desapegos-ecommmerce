@@ -35,6 +35,7 @@ interface Props {
 }
 
 const Detail = ({ item }: Props) => {
+  console.log(item);
   const name = getProductName(item?.product);
   const images =
     [...getProductImageArray(item?.product), getProductImage(item?.product)] ||
