@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   );
 
   const prices = [
-    ...res.data.filter((price) => price.active),
+    ...res.data.filter((price) => price.active && price.product.active),
     VolksCar,
     nissanCar,
     RoupasBebe,
