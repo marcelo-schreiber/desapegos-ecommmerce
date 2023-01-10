@@ -2,6 +2,10 @@ export function getProductName(product: any) {
   return product?.name;
 }
 
+export function getProductArchived(product: any) {
+  return product?.active;
+}
+
 export function getProductId(product: any) {
   return product?.id;
 }
