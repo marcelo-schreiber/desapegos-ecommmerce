@@ -5,7 +5,7 @@ import Product from "../components/Product/Product";
 import Header from "../components/Header/Header";
 import styled from "styled-components";
 import Head from "next/head";
-import { getProductId, getProductType } from "../utils/computed";
+import { getProductId, getProductType, getProductArchived } from "../utils/computed";
 import { useEffect, useState } from "react";
 import { VolksCar, nissanCar, RoupasBebe } from "../data/cars";
 
@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   );
 
   const prices = [
-    ...res.data.filter((price) => price.active && price.product.active),
+    ...res.data.filter((price) => price.active && getProductArchived(price.product)),
     VolksCar,
     nissanCar,
     RoupasBebe,
