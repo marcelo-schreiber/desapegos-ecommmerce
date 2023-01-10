@@ -2,7 +2,7 @@ export function getProductName(product: any) {
   return product?.name;
 }
 
-export function getProductArchived(product: any) {
+export function getProductArchived(product: any): boolean {
   return product?.active;
 }
 
