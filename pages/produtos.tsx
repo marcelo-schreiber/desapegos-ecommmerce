@@ -1,13 +1,13 @@
 import type { GetServerSideProps, NextPage } from "next";
 
-import Stripe from "stripe";
-import Product from "../components/Product/Product";
-import Header from "../components/Header/Header";
-import styled from "styled-components";
 import Head from "next/head";
-import { getProductId, getProductType, getProductArchived } from "../utils/computed";
 import { useEffect, useState } from "react";
-import { VolksCar, nissanCar, RoupasBebe } from "../data/cars";
+import Stripe from "stripe";
+import styled from "styled-components";
+import Header from "../components/Header/Header";
+import Product from "../components/Product/Product";
+import { RoupasBebe } from "../data/cars";
+import { getProductArchived, getProductId, getProductType } from "../utils/computed";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,8 +33,6 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
 
   const prices = [
     ...res.data.filter((price) => price.active && getProductArchived(price.product)),
-    VolksCar,
-    nissanCar,
     RoupasBebe,
   ];
 
