@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "next": "^12.2.2",
+    "next": "^13.4.0",
     "next-seo": "^5.5.0",
     "pure-react-carousel": "^1.28.1",
     "react": "18.2.0",
