@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (_) => {
   );
 
   const prices = [
-    ...res.data.filter((price: Stripe.Price) => price.active && getProductArchived(price.product)),
+    ...res.data.filter((price) => price.active && getProductArchived(price.product)),
     RoupasBebe,
   ];
 
